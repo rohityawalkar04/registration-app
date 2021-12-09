@@ -29,7 +29,7 @@ jobs:
       run: docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
 
     - name: build docker image
-      run: docker build . --file Dockerfile --tag rohityawalkar04/registration-app:latest
+      run: docker build . --file Dockerfile --tag ${{secrets.DOCKER_USER}}/registration-app
 
     - name: docker push
       run: docker push ${{secrets.DOCKER_USER}}/registration-app
